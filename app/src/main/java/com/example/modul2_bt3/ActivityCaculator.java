@@ -30,6 +30,10 @@ public class ActivityCaculator extends AppCompatActivity implements View.OnClick
             screenresult = findViewById(R.id.screenresult);
             screenoperator = findViewById(R.id.screenoperator);
             screenremember = findViewById(R.id.screenremember);
+//        screennumber = findViewById(R.id.screennumber);
+//        screenresult = findViewById(R.id.screenresult);
+//        screenoperator = findViewById(R.id.screenoperator);
+//        screenremember = findViewById(R.id.screenremember);
 
         /** Button */
             button_0 = (Button) findViewById(R.id.button_0);

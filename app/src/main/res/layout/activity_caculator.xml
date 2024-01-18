@@ -33,7 +33,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginRight="20dp"
                         android:text=""
-                        android:textAlignment="textEnd"
+                        android:layout_gravity="end|center_vertical"
                         android:textSize="30dp" />
 
                     <TextView
@@ -42,7 +42,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginRight="20dp"
                         android:text=""
-                        android:textAlignment="textEnd"
+                        android:layout_gravity="end|center_vertical"
                         android:textSize="30dp" />
 
                 </LinearLayout>
@@ -58,7 +58,7 @@
                     android:layout_marginEnd="20dp"
                     android:layout_marginBottom="20dp"
                     android:backgroundTint="@color/olive"
-                    android:text="Back" />
+                    android:text="Caculator" />
             </RelativeLayout>
         </LinearLayout>
         <LinearLayout
