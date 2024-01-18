@@ -13,8 +13,10 @@ public class ActivityCaculator extends AppCompatActivity implements View.OnClick
     /** implements View.OnClickListener để có thể sử dụng các OnClickListener VD: button_0.setOnClickListener(this); */
     private boolean continue_caculating = false, doubleClick_operator = false;
     Button button_del, button_c, button_dot, button_equals, button_add, button_hieu, button_x, button_div;
-    Button button_0, button_1,  button_2, button_3, button_4, button_5, button_6, button_7, button_8, button_9;
+    Button button_0, button_1,  button_2, button_3, button_4, button_5, button_6, button_7, button_8, button_9, button_ANS;
     TextView screennumber, screenresult, screenoperator, screenremember;
+
+    Double ANS = 0.0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,10 +42,13 @@ public class ActivityCaculator extends AppCompatActivity implements View.OnClick
             button_7 = (Button) findViewById(R.id.button_7);
             button_8 = (Button) findViewById(R.id.button_8);
             button_9 = (Button) findViewById(R.id.button_9);
+            button_ANS = (Button) findViewById(R.id.button_ANS);
+
             button_dot = (Button) findViewById(R.id.button_dot);
             button_equals = (Button) findViewById(R.id.button_equals);
             button_del = (Button) findViewById(R.id.button_del);
             button_c = (Button) findViewById(R.id.button_C);
+
             button_add = (Button) findViewById(R.id.button_add);
             button_hieu = (Button) findViewById(R.id.button_tru);
             button_x = (Button) findViewById(R.id.button_x);
@@ -61,6 +66,7 @@ public class ActivityCaculator extends AppCompatActivity implements View.OnClick
             button_7.setOnClickListener(this);
             button_8.setOnClickListener(this);
             button_9.setOnClickListener(this);
+            button_ANS.setOnClickListener(this);
 
         /** set tool */
             button_c.setOnClickListener(this);
@@ -168,7 +174,8 @@ public class ActivityCaculator extends AppCompatActivity implements View.OnClick
                         button_c.performClick();
                         return;
                     }
-                    screenresult.setText(String.valueOf(Double.parseDouble(screenremember.getText().toString()) + Double.parseDouble(screennumber.getText().toString())));
+                    ANS = Double.parseDouble(screenremember.getText().toString()) + Double.parseDouble(screennumber.getText().toString());
+                    screenresult.setText(String.valueOf(ANS));
                     break;
                 case ("-"):
                     if (screenremember.getText().toString().equals("")) {
@@ -176,7 +183,8 @@ public class ActivityCaculator extends AppCompatActivity implements View.OnClick
                         button_c.performClick();
                         return;
                     }
-                    screenresult.setText(String.valueOf(Double.parseDouble(screenremember.getText().toString()) - Double.parseDouble(screennumber.getText().toString())));
+                    ANS = Double.parseDouble(screenremember.getText().toString()) - Double.parseDouble(screennumber.getText().toString());
+                    screenresult.setText(String.valueOf(ANS));
                     break;
                 case ("*"):
                     if (screenremember.getText().toString().equals("")) {
@@ -184,7 +192,8 @@ public class ActivityCaculator extends AppCompatActivity implements View.OnClick
                         button_c.performClick();
                         return;
                     }
-                    screenresult.setText(String.valueOf(Double.parseDouble(screenremember.getText().toString()) * Double.parseDouble(screennumber.getText().toString())));
+                    ANS = Double.parseDouble(screenremember.getText().toString()) * Double.parseDouble(screennumber.getText().toString());
+                    screenresult.setText(String.valueOf(ANS));
                     break;
                 case ("/"):
                     if (screenremember.getText().toString().equals("")) {
@@ -196,11 +205,12 @@ public class ActivityCaculator extends AppCompatActivity implements View.OnClick
                         checkData2Notice("Không chia được cho 0");
                         break;
                     }
-                    screenresult.setText(String.valueOf(Double.parseDouble(screenremember.getText().toString()) / Double.parseDouble(screennumber.getText().toString())));
+                    ANS = Double.parseDouble(screenremember.getText().toString()) / Double.parseDouble(screennumber.getText().toString());
+                    screenresult.setText(String.valueOf(ANS));
                     break;
             }
         }
-//        else if () {}
+        else if (v == button_ANS) {screennumber.setText(String.valueOf(ANS));}
 //        else if () {}
 //        else if () {}
 //        else if () {}

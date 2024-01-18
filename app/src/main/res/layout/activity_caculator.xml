@@ -93,6 +93,15 @@
         android:layout_weight="1">
         <TableRow>
             <Button
+                android:id="@+id/button_ANS"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_weight="1"
+                android:textSize="20dp"
+                android:text="ANS" />
+            <Button
                 android:id="@+id/button_C"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
